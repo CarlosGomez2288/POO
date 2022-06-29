@@ -21,6 +21,13 @@
  */
 package Persona;
 
+import Entidad.Persona;
+import ServiPersona.serviPersona;
+
 public class Main {
 
+    public static void main(String[] args) {
+        serviPersona sp = new serviPersona();
+        Persona per = sp.crearPersona();
+    }
 }

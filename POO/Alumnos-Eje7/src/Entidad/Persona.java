@@ -7,12 +7,13 @@ public class Persona {
     private double peso, altura;
 
     /*Constructor*/
-    public Persona() {
+    public Persona(String sexo) {
+         this.sexo = sexo;
     }
 
-    public Persona(String nombre, String sexo, int edad, double peso, double altura) {
+    public Persona(String nombre, int edad, double peso, double altura) {
         this.nombre = nombre;
-        this.sexo = sexo;
+       
         this.edad = edad;
         this.peso = peso;
         this.altura = altura;

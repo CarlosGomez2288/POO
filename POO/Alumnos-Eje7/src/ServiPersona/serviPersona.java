@@ -22,19 +22,40 @@
 package ServiPersona;
 
 import Entidad.Persona;
+import java.awt.BorderLayout;
 
 import java.util.Scanner;
 
 
 public class serviPersona {
     Scanner dat = new Scanner(System.in).useDelimiter("\n");
-    
-    Persona crearPersona(Persona perso){
-        System.out.println("Ingresar Nombre: ");
+    boolean val = true;
+    Persona perso;
+    public Persona crearPersona(){
+        System.out.print("Ingresar Nombre: ");
         String nombre = dat.next();
-        System.out.println();
-        System.out.println("Ingresar Sexi: [M-> Masculino | F-> Femenino | O-> Otros]");
-        String sex = dat.next();
+        do {            
+            System.out.println("Ingresar Sexo: [M-> Masculino | F-> Femenino | O-> Otros]");
+             String sex = dat.next();
+             if(!sex.equalsIgnoreCase("m") && !sex.equalsIgnoreCase("f")){
+                 System.out.print("Valor ingresado incorrecto: ");
+                 System.out.println();
+                 System.out.println("Vuelven a instarlo...");
+                 val = false;
+             }else {
+                 perso.setSexo(sex);
+             }
+             
+        } while (val = true);
+      
+        System.out.print("Ingresar Edad: ");
+        int edad = dat.nextInt();
+        System.out.print("Ingresar Peso: " + "kg");
+        double peso = dat.nextDouble();
+        System.out.println("Ingresar Altura: " + "m");
+        double altura = dat.nextDouble();
+        
+        return new Persona(nombre, edad, peso, altura);
             
     }
 }
