@@ -19,20 +19,19 @@ package Nespresso;
 
 import Entidad.Cafetera;
 import Servicios.ServiNespre;
-import java.awt.BorderLayout;
 import java.util.Scanner;
 
 public class Main {
-    
+
     public static void main(String[] args) {
         Scanner dat = new Scanner(System.in);
         String oper, confi = "";
-        
+
         ServiNespre sn = new ServiNespre();
         Cafetera caf = sn.crearCafetera();
-        
+
         do {
-            int porc_caf = (int) ((caf.getCantActual()* 100) / caf.getCapaMaxima());
+            int porc_caf = (int) ((caf.getCantActual() * 100) / caf.getCapaMaxima());
             System.out.println("▄▄▄▄▄▄▄▄▄▄▄");
             System.out.println("█ Cafe NESPRESO █");
             System.out.println("▀▀▀▀▀▀▀▀▀▀▀");
@@ -47,7 +46,7 @@ public class Main {
             System.out.println("6] Salir.");
             System.out.println();
             oper = dat.next();
-            
+
             switch (oper) {
                 case "1":
                     sn.llenarCafetera(caf);

@@ -1,34 +1,34 @@
-
 package Entidad;
 
 public class Cafetera {
+
     private double capacidaMaxima;
     private double cantidaActual;
-    
+
     /*CONSTRUCTORS*/
-    public Cafetera(){}
-    
-    public Cafetera(double capacidaMaxima, double cantidaActual){
+    public Cafetera() {
+    }
+
+    public Cafetera(double capacidaMaxima, double cantidaActual) {
         this.capacidaMaxima = capacidaMaxima;
         this.cantidaActual = cantidaActual;
     }
-    
+
     /*Setter and Getter*/
-    public void setCapaMaxima(double capaMaxima){
+    public void setCapaMaxima(double capaMaxima) {
         this.capacidaMaxima = capaMaxima;
     }
-    public void setCantiActual(double cantiActual){
+
+    public void setCantiActual(double cantiActual) {
         this.cantidaActual = cantiActual;
     }
-    
-    public double getCapaMaxima(){
+
+    public double getCapaMaxima() {
         return capacidaMaxima;
     }
-    public double getCantActual(){
+
+    public double getCantActual() {
         return cantidaActual;
     }
 
-   
-
-    
 }
