@@ -18,16 +18,58 @@
  * función devuelve un 1.
  * • Método esMayorDeEdad(): indica si la persona es mayor de edad. La función devuelve
  * un booleano.
+ * Crear 4 objetos de tipo Persona con distintos valores, a continuación, llamaremos todos
+ * los métodos para cada objeto, deberá comprobar si la persona está en su peso ideal, tiene
+ * sobrepeso o está por debajo de su peso ideal e indicar para cada objeto si la persona es
+ * mayor de edad.
+ * Por último, guardaremos los resultados de los métodos calcularIMC y esMayorDeEdad en
+ * distintas variables, para después en el main, calcular un porcentaje de esas 4 personas
+ * cuantas están por debajo de su peso, cuantas en su peso ideal y cuantos, por encima, y
+ * también calcularemos un porcentaje de cuantos son mayores de edad y cuantos menores.
  */
 package Persona;
 
 import Entidad.Persona;
 import ServiPersona.serviPersona;
+import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
+        Scanner dat = new Scanner(System.in);
         serviPersona sp = new serviPersona();
-        Persona per = sp.crearPersona();
+
+        int PIdea = 0, pNoideal = 0, speso = 0;
+        int mayor = 0, menor = 0;
+        System.out.print("Cuantas Personas quieres crear: ");
+        int cantP = dat.nextInt();
+
+        for (int i = 0; i < cantP; i++) {
+            Persona perso = sp.crearPersona();
+            System.out.println("PERSONA: " + cantP);
+
+            switch (sp.calcularIMC(perso)) {
+                case -1:
+                    pNoideal++;
+                    break;
+                case 0:
+                    PIdea++;
+                    break;
+                case 1:
+                    speso++;
+                    break;
+            }
+            
+            if(sp.esMayorDeEdad(perso) == true){
+                mayor++;
+            } else {
+                menor++;
+            }
+        }
+       
+        System.out.println("INFORME PERSONA");
+        System.out.print("PESO IDEAL: " + pNoideal + " |PESO NO ideal: " + pNoideal + " |Sobre Peso: " + speso);
+        System.out.print("Mayor: " + mayor + " |menor " + menor);
     }
+    
 }

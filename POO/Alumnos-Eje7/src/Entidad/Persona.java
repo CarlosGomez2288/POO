@@ -7,8 +7,8 @@ public class Persona {
     private double peso, altura;
 
     /*Constructor*/
-    public Persona(String sexo) {
-         this.sexo = sexo;
+    public Persona() {
+         
     }
 
     public Persona(String nombre, int edad, double peso, double altura) {
@@ -20,6 +20,7 @@ public class Persona {
     }
 
     /*Setter and Getter*/
+
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
@@ -34,6 +35,10 @@ public class Persona {
 
     public void setPeso(double peso) {
         this.peso = peso;
+    }
+
+    public void setAltura(double altura) {
+        this.altura = altura;
     }
 
     public String getNombre() {
@@ -55,4 +60,6 @@ public class Persona {
     public double getAltura() {
         return altura;
     }
+   
+    
 }
