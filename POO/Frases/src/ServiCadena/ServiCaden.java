@@ -1,6 +1,4 @@
 /**
- * e) Método compararLongitud(String frase), deberá comparar la longitud de la frase que
- * compone la clase con otra nueva frase ingresada por el usuario.
  * f) Método unirFrases(String frase), deberá unir la frase contenida en la clase Cadena con
  * una nueva frase ingresada por el usuario y mostrar la frase resultante.
  * g) Método reemplazar(String letra), deberá reemplazar todas las letras “a” que se
