@@ -47,8 +47,10 @@ public class serviPersona {
         
         if(peso <20){
             ret = -1;
-        }else if(peso >= 20 && peso <= 25){
-            ret= 0;
+        }else if((peso >= 20) && peso <=25){
+          
+                ret= 0;
+           
         } else {
             ret = 1;
         }

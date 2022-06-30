@@ -68,8 +68,16 @@ public class Main {
         }
        
         System.out.println("INFORME PERSONA");
-        System.out.print("PESO IDEAL: " + pNoideal + " |PESO NO ideal: " + pNoideal + " |Sobre Peso: " + speso);
-        System.out.print("Mayor: " + mayor + " |menor " + menor);
+        
+            System.out.println();
+            System.out.println("• Porcentajes según IMC. ");
+            System.out.println("·Bajo el ideal: "+((int) (pNoideal * 100 / cantP))+"%");
+            System.out.println("·Ideal: "+((int) (PIdea * 100 / cantP))+"%");
+            System.out.println("·Encima del ideal: "+((int) (speso * 100 / cantP))+"%");
+            System.out.println();
+            System.out.println("• Porcentaje según edad. ");
+            System.out.println("·Mayores de 18: "+((int) (mayor * 100 / cantP))+"%");
+            System.out.println("·Menores de 18: "+((int) (menor * 100 / cantP))+"%");
     }
     
 }
