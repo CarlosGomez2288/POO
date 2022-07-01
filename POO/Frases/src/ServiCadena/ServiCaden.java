@@ -14,12 +14,13 @@ import java.util.Scanner;
 
 public class ServiCaden {
 
+    Cadena cad = new Cadena();
     Scanner dat = new Scanner(System.in);
 
     public Cadena nuevaFrase() {
         System.out.print("Ingresar una frase: ");
-        String frase = dat.next();
-
+        String frase = dat.nextLine();
+        cad.setFrase(frase);
         return new Cadena(frase);
     }
 
@@ -57,11 +58,43 @@ public class ServiCaden {
         }
         return cantC;
     }
-    
-    public boolean  MétodocompararLongitud(Cadena cad, String frase2){
-        boolean igual  = frase2.length() == cad.getLongitud();
+
+    public boolean MétodocompararLongitud(Cadena cad, String frase2) {
+        boolean igual = frase2.length() == cad.getLongitud();
         return igual;
     }
+
+    public void unirFrases(Cadena cad, String frase) {
+        System.out.print(cad.getFrase().concat(" " + frase));
+        Salto();
+    }
+
+    public String Reemplzar(Cadena cad, String letrab, String letraR) {
+        String letra_f, textoR = "";
+        for (int i = 0; i < cad.getLongitud() ; i++) {
+            letra_f = cad.getFrase().substring(i, i + 1);
+            if (letra_f.equalsIgnoreCase(letrab)) {
+                textoR = textoR.concat(letraR);
+            }else{
+                textoR = textoR.concat(letra_f);
+            }
+        }
+        return textoR;
+    }
+
+    public boolean contiene(Cadena cad, String letra) {
+        boolean cont = false;
+        String busLetra;
+        for (int i = 0; i < cad.getLongitud() - 1; i++) {
+            busLetra = cad.getFrase().substring(i, i + 1);
+            if (busLetra.equalsIgnoreCase(letra)) {
+                cont = true;
+            }
+        }
+        return cont;
+
+    }
+
     public void Salto() {
         System.out.println();
         System.out.println("Preciose intro para continuar...");

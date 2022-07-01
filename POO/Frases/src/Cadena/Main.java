@@ -31,7 +31,7 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner dat = new Scanner(System.in).useDelimiter("\n");
-        String confi = "";
+        String confi = "", letra;
         ServiCaden sc = new ServiCaden();
         Cadena cade = sc.nuevaFrase();
         do {
@@ -42,10 +42,11 @@ public class Main {
             System.out.println("1] Contar vocales.");
             System.out.println("2] Invertir frase.");
             System.out.println("3] Nº de veces que se repite una letra.");
-            System.out.println("4] Comparar longitudes con otra frase ingresada.");
+            System.out.println("4] Comparar longitudes con otra frase.");
             System.out.println("5] Unir frases.");
-            System.out.println("6] Contiene letra ingresada.");
-            System.out.println("7] Salir.");
+            System.out.println("6] Reemplazar.");
+            System.out.println("7] Contiene letra.");
+            System.out.println("8] Salir.");
             System.out.println();
             System.out.print("» ");
             int oper = dat.nextInt();
@@ -64,9 +65,9 @@ public class Main {
                     break;
                 case 3:
                     System.out.print("» Ingrese una letra: ");
-                    String letra = dat.next();
-                    System.out.print("La veces que se repitio " + letra + " es: "
-                            + sc.vecesRepetido(cade, letra));
+                    String letraP = dat.next();
+                    System.out.print("La veces que se repitio " + letraP + " es: "
+                            + sc.vecesRepetido(cade, letraP));
                     System.out.println();
                     System.out.println("Preciose intro para continuar...");
                     dat.next();
@@ -84,9 +85,32 @@ public class Main {
                     dat.next();
                     break;
                 case 5:
+                    System.out.print("Ingrese una Frase: ");
+                    String fraseU = dat.next();
+                    sc.unirFrases(cade, fraseU);
                     break;
                 case 6:
-                    
+                    System.out.println("ingresar letra a buscar");
+                    String letrab = dat.next();
+                    System.out.println("Ingresar a reemplazar");
+                    String letraR = dat.next();
+                    System.out.println(sc.Reemplzar(cade, letrab, letraR));
+                   break;
+                case 7:
+                    System.out.println("Ingrese la letra a buscar: ");
+                    String letraB = dat.next();
+                    if (sc.contiene(cade, letraB)) {
+                        System.out.println("La letra " + letraB + " si se encontro en el texto:");
+                    } else {
+                        System.out.println("La letra " + letraB + " no se encontro en el texto:");
+                    }
+                    System.out.println();
+                    System.out.println("Preciose intro para continuar...");
+                    dat.next();
+                    break;
+                case 8:
+                    System.out.println("¿Seguro que quieres salir? [y/n]");
+                    confi = dat.next();
                     break;
                 default:
                     System.out.println("Error, valor ingresado invalido.");
