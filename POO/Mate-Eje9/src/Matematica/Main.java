@@ -17,15 +17,15 @@ import ServiMate.ServiMate;
 
 public class Main {    
 
-    public static void main(String[] args) {
+     public static void main(String[] args) {
         Mate opers = new Mate();
-        
         opers.setNum1(Math.random() * 10);
         opers.setNum2(Math.random() * 10);
-        
-        System.out.println("OPERACIONES");
-        ServiMate.Mostrar(opers);
-        System.out.println("El Mayor numero es:" + ServiMate.devolverMayor(opers));
+        ServiMate.mostrarOperandos(opers);
+        System.out.println("El mayor es: " + ServiMate.devolverMayor(opers));
+        System.out.println();
+        System.out.println("La potencia del mayor redondeado elevado al menor redondeado es: " + ServiMate.calcularPot(opers));
+        System.out.println("La raíz cuadrada del menor es: " + ServiMate.calcularRaiz(opers));
     }
     
 }
