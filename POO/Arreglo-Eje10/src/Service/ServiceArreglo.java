@@ -1,6 +1,7 @@
 package Service;
 
 import Entidad.Arreglo;
+import java.util.Arrays;
 
 public class ServiceArreglo {
 
@@ -17,7 +18,8 @@ public class ServiceArreglo {
         System.out.println("ARREGLO A");
         Mostrar(arra_A);
 
-        for (int i = 0; i < 49; i++) {//Ordenamiento del Arreglo
+        
+       /* for (int i = 0; i < 49; i++) {//orderly arrangement
             for (int j = 0; j < 49; j++) {
                 if (arra_A[j] > arra_A[j + 1]) {
                     aux = arra_A[j];
@@ -25,7 +27,10 @@ public class ServiceArreglo {
                     arra_A[j + 1] = aux;
                 }
             }
-        }
+        }*/
+       /*another method: mas facil xd*/
+       Arrays.sort(arra_A);
+       
         System.out.println("Arreglo A ordenado");
         Mostrar(arra_A);
         array.setArra_A(arra_A);
