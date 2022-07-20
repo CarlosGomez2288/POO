@@ -51,7 +51,6 @@ public class SE {
         });
         System.out.println();
 
-        
     }
 
     public void ordenar() {
@@ -69,6 +68,7 @@ public class SE {
     public void eliminarPais() {
         boolean find = false;
         Iterator<PE> it = pais.iterator();
+        System.out.println();
         System.out.print("» Ingrese un país: ");
         String name = dat.next();
         while (it.hasNext()) {
